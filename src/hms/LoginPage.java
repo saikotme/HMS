@@ -43,7 +43,6 @@ public class LoginPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login Page");
-        setPreferredSize(new java.awt.Dimension(800, 450));
         setResizable(false);
 
         jLabel2.setFont(new java.awt.Font("AkayaKanadaka", 0, 24)); // NOI18N
@@ -121,6 +120,7 @@ public class LoginPage extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

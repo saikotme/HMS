@@ -60,7 +60,7 @@ public class DoctorPanel extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        LoginPage loginpage = new LoginPage();
+        LoginPanel loginpage = new LoginPanel();
             loginpage.setVisible(true);
             dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

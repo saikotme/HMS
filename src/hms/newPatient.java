@@ -121,13 +121,14 @@ public class newPatient extends javax.swing.JFrame {
     private void registerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerActionPerformed
             String username = jTextField4.getText();
             String password = new String(jPasswordField1.getPassword());
+            String usertype = "patient";
             try {
                 // Open the database file for appending
-                FileWriter fileWriter = new FileWriter("database.txt", true);
+                FileWriter fileWriter = new FileWriter("patientInfoDatabase.txt", true);
                 PrintWriter printWriter = new PrintWriter(fileWriter);
 
                 // Write the new account details to the database file
-                printWriter.println(username + "," + password);
+                printWriter.println(username + "#" + password + "#" + usertype);
 
                 // Close the database file
                 printWriter.close();

@@ -1,0 +1,2 @@
+UID#Username#Password#Usertype#Full Name#Contact#Specialty#Qualification#Experience#Consultation Day#Blood Group
+###doctor###Cardiology##0#Saturday#A+

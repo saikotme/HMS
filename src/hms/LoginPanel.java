@@ -43,6 +43,7 @@ public class LoginPanel extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("LOG IN");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -149,7 +150,7 @@ public class LoginPanel extends javax.swing.JFrame {
 
         try {
             // Open the database file for reading
-            File databaseFile = new File("database.txt");
+            File databaseFile = new File("patientInfoDatabase.txt");
             BufferedReader reader = new BufferedReader(new FileReader(databaseFile));
 
             // Read the contents of the database file line by line
@@ -157,30 +158,34 @@ public class LoginPanel extends javax.swing.JFrame {
             boolean loginSuccessful = false;
             while ((line = reader.readLine()) != null) {
                 // Split the line into username and password
-                String[] parts = line.split(",");
+                String[] parts = line.split("#");
                 String storedUsername = parts[0];
                 String storedPassword = parts[1];
+                String storedUsertype = parts[2];
 
                 if(username.equals("admin") && password.equals("admin")){
                     loginSuccessful = true;
                     AdminPanel AdminPage = new AdminPanel();
                     AdminPage.setVisible(true);
                     dispose();
+                    break;
                 }
                 else if(username.equals("doctor") && password.equals("doctor")){
                     loginSuccessful = true;
                     DoctorPanel DoctorPage = new DoctorPanel();
                     DoctorPage.setVisible(true);
                     dispose();
+                    break;
                 }
                 else if(username.equals("patient") && password.equals("patient")){
                     loginSuccessful = true;
                     PatientPanel PatientPage = new PatientPanel();
                     PatientPage.setVisible(true);
                     dispose();
+                    break;
                 }
                 // Check if the entered username and password match the stored values
-                else if (username.equals(storedUsername) && password.equals(storedPassword)) {
+                else if (username.equals(storedUsername) && password.equals(storedPassword) && "patient".equals(storedUsertype)) {
                     loginSuccessful = true;
                     PatientPanel PatientPage = new PatientPanel();
                     PatientPage.setVisible(true);

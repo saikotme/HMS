@@ -159,9 +159,9 @@ public class LoginPanel extends javax.swing.JFrame {
             while ((line = reader.readLine()) != null) {
                 // Split the line into username and password
                 String[] parts = line.split("#");
-                String storedUsername = parts[1];
-                String storedPassword = parts[2];
-                String storedUsertype = parts[3];
+                String storedUsername = parts[0];
+                String storedPassword = parts[1];
+                String storedUsertype = parts[2];
 
                 if(username.equals("admin") && password.equals("admin")){
                     loginSuccessful = true;

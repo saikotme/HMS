@@ -454,7 +454,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel32">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Date of birth :"/>
+                        <Property name="text" type="java.lang.String" value="Age :"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel16">
@@ -605,7 +605,7 @@
                           <Component id="jTextField3" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
                           <Component id="jTextField4" min="-2" pref="117" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="410" max="32767" attributes="0"/>
+                      <EmptySpace pref="377" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -675,11 +675,14 @@
             <Component class="javax.swing.JComboBox" name="jComboBox2">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="4">
+                  <StringArray count="7">
                     <StringItem index="0" value="Cash"/>
-                    <StringItem index="1" value="Cards"/>
-                    <StringItem index="2" value="Mobile Banking"/>
-                    <StringItem index="3" value="Others"/>
+                    <StringItem index="1" value="BKash"/>
+                    <StringItem index="2" value="Nagad"/>
+                    <StringItem index="3" value="Upay"/>
+                    <StringItem index="4" value="Other Mobile Banking"/>
+                    <StringItem index="5" value="Cards"/>
+                    <StringItem index="6" value="Others"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -956,6 +959,7 @@
             </Component>
             <Component class="javax.swing.JCheckBox" name="jCheckBox4">
               <Properties>
+                <Property name="selected" type="boolean" value="true"/>
                 <Property name="text" type="java.lang.String" value="Approved"/>
               </Properties>
               <Events>

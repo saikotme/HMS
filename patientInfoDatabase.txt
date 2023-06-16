@@ -136,3 +136,4 @@ Serial#Username#Password#Usertype#Full name#Contact#Gender#Address#Age#Blood Gro
 
 ###Patient#saif##Male##0#A+
 ##patient
+Kazi#Kazi#patient

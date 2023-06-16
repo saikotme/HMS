@@ -114,7 +114,6 @@ public class AdminPanel extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         jButton13 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -534,6 +533,11 @@ public class AdminPanel extends javax.swing.JFrame {
         jLabel30.setText("Amount to be paid :");
 
         jButton12.setText("CONFIRM");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -636,21 +640,6 @@ public class AdminPanel extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Make Appointment", jPanel3);
-
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 852, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 470, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("Finance and Billing", jPanel4);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -925,6 +914,30 @@ public class AdminPanel extends javax.swing.JFrame {
             loginpage.setVisible(true);
             dispose();
     }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        int choice = JOptionPane.showOptionDialog(
+                null,
+                "Confirm appointment?",
+                "Confirmation",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                new Object[]{"Yes", "No"},
+                "No");
+
+        // Process the user's choice
+        if (choice == JOptionPane.YES_OPTION) {
+            System.out.println("Appointment confirmed!");
+            // Add your logic here for confirming the appointment
+        } else if (choice == JOptionPane.NO_OPTION) {
+            System.out.println("Appointment declined.");
+            // Add your logic here for declining the appointment
+        } else {
+            System.out.println("Popup closed or canceled.");
+            // Add your logic here for handling other cases
+        }
+    }//GEN-LAST:event_jButton12ActionPerformed
     
     private void removeLineFromTextFile(int rowIndex) {
     try {
@@ -1084,7 +1097,6 @@ public class AdminPanel extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;

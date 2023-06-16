@@ -500,13 +500,10 @@ public class PatientPanel extends javax.swing.JFrame {
 
         jTable10.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane2.setViewportView(jTable10);
@@ -638,7 +635,7 @@ public class PatientPanel extends javax.swing.JFrame {
         // TODO add your handling code here:
           ArrayList<String[]> doctorTable = new ArrayList<>();
     try {
-        BufferedReader reader = new BufferedReader(new FileReader("DoctorSchedule.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("DoctorInfoDatabase.txt"));
         String line;
         while ((line = reader.readLine()) != null) {
             String[] data = line.split("#");

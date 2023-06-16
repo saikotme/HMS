@@ -173,7 +173,7 @@ public class PatientPanel extends javax.swing.JFrame {
                     .addComponent(jLabel31)
                     .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel24)
                     .addComponent(jLabel27))
                 .addContainerGap(137, Short.MAX_VALUE))
@@ -483,13 +483,10 @@ public class PatientPanel extends javax.swing.JFrame {
 
         jTable10.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane2.setViewportView(jTable10);
@@ -621,7 +618,7 @@ public class PatientPanel extends javax.swing.JFrame {
         // TODO add your handling code here:
           ArrayList<String[]> doctorTable = new ArrayList<>();
     try {
-        BufferedReader reader = new BufferedReader(new FileReader("DoctorSchedule.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("DoctorInfoDatabase.txt"));
         String line;
         while ((line = reader.readLine()) != null) {
             String[] data = line.split("#");

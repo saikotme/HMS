@@ -170,13 +170,13 @@ public class LoginPanel extends javax.swing.JFrame {
                     dispose();
                     break;
                 }
-//                else if(username.equals("doctor") && password.equals("doctor")){
-//                    loginSuccessful = true;
-//                    DoctorPanel DoctorPage = new DoctorPanel();
-//                    DoctorPage.setVisible(true);
-//                    dispose();
-//                    break;
-//                }
+                else if(username.equals("doctor") && password.equals("doctor")){
+                    loginSuccessful = true;
+                    DoctorPanel DoctorPage = new DoctorPanel();
+                    DoctorPage.setVisible(true);
+                    dispose();
+                    break;
+                }
                 else if(username.equals("patient") && password.equals("patient")){
                     loginSuccessful = true;
                     PatientPanel PatientPage = new PatientPanel();

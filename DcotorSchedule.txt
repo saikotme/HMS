@@ -1,0 +1,8 @@
+Full Name#Specialty#Consultation Day
+Dr. Hasan Mahmud#Cardiology#Saturday
+Dr. Saif Ibne Rohan#Orthopedic#Friday
+Dr. Salma Hossain#Gynecology#Monday
+Dr. Tasvir Hossain#Oncology#Thursday
+Dr. Tahmid Chowdhury#Nurology#Wednesday
+Dr. Hayder Shikder#Dermatology#Sunday
+Dr. Tanzim Zaman#Cardiology#Tuesday

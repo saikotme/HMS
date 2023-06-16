@@ -6,7 +6,10 @@ package hms;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -47,6 +50,7 @@ public class PatientPanel extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -129,6 +133,13 @@ public class PatientPanel extends javax.swing.JFrame {
         jLabel16.setText("Personal Information");
         jLabel16.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        jButton2.setText("Get Info");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -149,7 +160,11 @@ public class PatientPanel extends javax.swing.JFrame {
                     .addComponent(jLabel29)
                     .addComponent(jLabel28)
                     .addComponent(jLabel26))
-                .addContainerGap(453, Short.MAX_VALUE))
+                .addContainerGap(433, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(220, 220, 220))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,10 +188,12 @@ public class PatientPanel extends javax.swing.JFrame {
                     .addComponent(jLabel31)
                     .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel24)
                     .addComponent(jLabel27))
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(22, 22, 22))
         );
 
         jTabbedPane2.addTab("Personal Details", jPanel6);
@@ -655,6 +672,36 @@ public class PatientPanel extends javax.swing.JFrame {
         jPanel3.setVisible(true);
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       String fileName = "DoctorInfoDatabase.txt"; // Replace with your file path
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            List<String[]> data = new ArrayList<>();
+
+            while ((line = br.readLine()) != null) {
+                String[] values = line.split("#");
+                data.add(values);
+            }
+
+            // Convert the list to an array
+            String[][] dataArray = data.toArray(new String[data.size()][]);
+
+            // Print the data for verification
+            for (String[] row : dataArray) {
+                System.out.println(Arrays.toString(row));
+            }
+
+            // Update the JLabel text
+            int index = 4; // Specify the desired row index
+            String textToUpdate = dataArray[index][4];
+            jLabel26.setText(textToUpdate);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -692,6 +739,7 @@ public class PatientPanel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
